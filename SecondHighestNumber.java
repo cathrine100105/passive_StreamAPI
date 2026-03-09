@@ -35,7 +35,7 @@ public class SecondHighestNumber {
 
         //7. Find Numbers Starting With Digit 1
         List<Integer> list = Arrays.asList(10, 15, 23, 11, 45, 19, 30);
-        list.stream().map(String::valueOf).filter(f->f.startsWith("1")).collect(Collectors.toList()).forEach(System.out::println);
+        list.stream().map(String::valueOf).filter(f->f.startsWith("1")).toList().forEach(System.out::println);
 
 
         System.out.println("\n");
