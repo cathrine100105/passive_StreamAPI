@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title:  Details of Borrowed Money
+  version: 1.0.0
+paths:
+  /money:
+    get:
+      summary: get all Borrowed details
+      parameters:
+        - name: page
+          in: query
+          description: number of pages
+          required: true
+          schema:
+            type: integer
+
+        - name: size
+          in: query
+          description: size of the page no
+          required: true
+          schema:
+            type: integer
+
+        - name: sort
+          in: query
+          description: filter the names
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MoneyDTO'
+
+    post:
+      summary: create a details
+      requestBody:
+        required: true
+        description: create a create a borrowed person details
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MoneyDTO'
+
+      responses:
+        '201':
+          description: created successfully
+
+
+
+
+components:
+  schemas:
+    MoneyDTO:
+      type: object
+      properties:
+        moneyId:
+          type: integer
+        name:
+          type: string
+        amount:
+          type: integer
+        year:
+          type: string
+        dueDate:
+          type: string
+        contactNo:
+          type: integer
+
+
