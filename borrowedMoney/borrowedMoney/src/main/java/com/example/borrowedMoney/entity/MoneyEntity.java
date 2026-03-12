@@ -20,7 +20,7 @@ public class MoneyEntity {
 
     private String name;
     private int amount;
-    private int year;
+    private String year;
     private String dueDate;
     private  int contactNo;
 }
